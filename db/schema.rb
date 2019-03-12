@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_193840) do
+ActiveRecord::Schema.define(version: 2019_03_12_194549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cocktail_ingredients", force: :cascade do |t|
+    t.bigint "ingredient_id"
+    t.bigint "cocktail_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cocktail_id"], name: "index_cocktail_ingredients_on_cocktail_id"
+    t.index ["ingredient_id"], name: "index_cocktail_ingredients_on_ingredient_id"
+  end
 
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
@@ -56,6 +65,8 @@ ActiveRecord::Schema.define(version: 2019_03_12_193840) do
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
+  add_foreign_key "cocktail_ingredients", "cocktails"
+  add_foreign_key "cocktail_ingredients", "ingredients"
   add_foreign_key "examples", "users"
   add_foreign_key "ingredient_users", "ingredients"
   add_foreign_key "ingredient_users", "users"
