@@ -12,10 +12,10 @@
 
 Ingredient.delete_all
 Cocktail.delete_all
-Cocktail_Ingredients.delete_all
+CocktailIngredient.delete_all
 
 Ingredient.create([{ ingredient_name: 'gin' }, { ingredient_name: 'vodka' }])
-Cocktail.create(name: 'Glass of gin')
+Cocktail.create(name: 'Glass of gin', instructions: 'It pours the gin into the glass.')
 
 CocktailIngredient.create(ingredient_id: Ingredient.first.id, cocktail_id: Cocktail.first.id)
 
