@@ -9,3 +9,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Ingredient.delete_all
+Cocktail.delete_all
+Cocktail_Ingredients.delete_all
+
+Ingredient.create([{ ingredient_name: 'gin' }, { ingredient_name: 'vodka' }])
+Cocktail.create(name: 'Glass of gin')
+
+CocktailIngredient.create(ingredient_id: Ingredient.first.id, cocktail_id: Cocktail.first.id)
+
+puts 'data seeded'
+# puts Ingredient.where(ingredient_name: 'gin')
