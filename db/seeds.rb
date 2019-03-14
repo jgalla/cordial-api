@@ -10,14 +10,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Ingredient.delete_all
-Cocktail.delete_all
-CocktailIngredient.delete_all
-
+# Ingredient.delete_all
+# Cocktail.delete_all
+# CocktailIngredient.delete_all
+#
 Ingredient.create([{ ingredient_name: 'gin' }, { ingredient_name: 'vodka' }])
-Cocktail.create(name: 'Glass of gin', instructions: 'It pours the gin into the glass.')
-
-CocktailIngredient.create(ingredient_id: Ingredient.first.id, cocktail_id: Cocktail.first.id)
+Cocktail.create([{ name: 'Glass of gin', instructions: 'It pours the gin into the glass.' }, { name: 'Glass of vodka', instructions: 'You know what to do.' }])
+CocktailIngredient.create([{ ingredient_id: Ingredient.first.id, cocktail_id: Cocktail.first.id, qty: '1 glass' }, { ingredient_id: Ingredient.last.id, cocktail_id: Cocktail.last.id, qty: '.75 cups' }])
 
 puts 'data seeded'
 # puts Ingredient.where(ingredient_name: 'gin')
