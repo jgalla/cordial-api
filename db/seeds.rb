@@ -17,16 +17,66 @@
 Ingredient.create(
   [{ ingredient_name: 'gin', checked_status: false },
    { ingredient_name: 'whiskey', checked_status: false },
-   { ingredient_name: 'vodka', checked_status: false }]
+   { ingredient_name: 'vodka', checked_status: false },
+   { ingredient_name: 'tequila', checked_status: false },
+   { ingredient_name: 'mezcal', checked_status: false },
+   { ingredient_name: 'sweet vermouth', checked_status: false },
+   { ingredient_name: 'campari', checked_status: false },
+   { ingredient_name: 'bourbon', checked_status: false },
+   { ingredient_name: 'rye', checked_status: false },
+   { ingredient_name: 'bitters', checked_status: false },
+   { ingredient_name: 'lime juice', checked_status: false },
+   { ingredient_name: 'agave', checked_status: false }]
 )
 Cocktail.create(
-  [{ name: 'Glass of gin', instructions: 'It pours the gin into the glass.' },
-   { name: 'Glass of vodka', instructions: 'You know what to do.' }]
+  [{ name: 'Boulevardier', instructions: 'Stir with ice and strain into glass.' },
+   { name: 'Manhattan', instructions: 'Stir with ice and strain into glass.' },
+   { name: 'Margarita', instructions: 'Add ingredients to shaker. Shake then strain into glass.' },
+   { name: 'Negroni', instructions: 'Stir with ice and strain into glass.' },
+   { name: 'Mezcal Margarita', instructions: 'Add ingredients to shaker. Shake then strain into glass.' },
+   { name: 'Glass of whiskey', instructions: 'Pour into glass.' },
+   { name: 'Boulevardier', instructions: 'Stir with ice and strain into glass.' },
+   { name: 'Manhattan', instructions: 'Stir with ice and strain into glass.' },
+   { name: 'Margarita', instructions: 'Add ingredients to shaker. Shake then strain into glass.' },
+   { name: 'Negroni', instructions: 'Stir with ice and strain into glass.' },
+   { name: 'Mezcal Margarita', instructions: 'Add ingredients to shaker. Shake then strain into glass.' },
+   { name: 'Glass of whiskey', instructions: 'Pour into glass.' }]
 )
 CocktailIngredient.create(
-  [{ ingredient_id: Ingredient.first.id, cocktail_id: Cocktail.first.id, qty: '1 glass' },
-   { ingredient_id: Ingredient.last.id, cocktail_id: Cocktail.last.id, qty: '.5 cups' },
-   { ingredient_id: Ingredient.first.id, cocktail_id: Cocktail.last.id, qty: '.75 cups' }]
+  [{ cocktail_id: 1, ingredient_id: 7, qty: '1 oz' },
+   { cocktail_id: 1, ingredient_id: 8, qty: '1 oz' },
+   { cocktail_id: 1, ingredient_id: 6, qty: '1 oz' },
+   { cocktail_id: 2, ingredient_id: 9, qty: '2 oz' },
+   { cocktail_id: 2, ingredient_id: 6, qty: '1 oz' },
+   { cocktail_id: 2, ingredient_id: 10, qty: '2 dashes' },
+   { cocktail_id: 3, ingredient_id: 4, qty: '2 oz' },
+   { cocktail_id: 3, ingredient_id: 11, qty: '1 oz' },
+   { cocktail_id: 3, ingredient_id: 12, qty: '1 tsp' },
+   { cocktail_id: 4, ingredient_id: 1, qty: '1 oz' },
+   { cocktail_id: 4, ingredient_id: 6, qty: '1 oz' },
+   { cocktail_id: 4, ingredient_id: 7, qty: '1 oz' },
+   { cocktail_id: 5, ingredient_id: 5, qty: '1 oz' },
+   { cocktail_id: 5, ingredient_id: 4, qty: '1 oz' },
+   { cocktail_id: 5, ingredient_id: 11, qty: '1 oz' },
+   { cocktail_id: 5, ingredient_id: 12, qty: '1 tsp' },
+   { cocktail_id: 6, ingredient_id: 2, qty: '2 oz' },
+   { cocktail_id: 7, ingredient_id: 7, qty: '1 oz' },
+   { cocktail_id: 7, ingredient_id: 8, qty: '1 oz' },
+   { cocktail_id: 7, ingredient_id: 6, qty: '1 oz' },
+   { cocktail_id: 8, ingredient_id: 9, qty: '2 oz' },
+   { cocktail_id: 8, ingredient_id: 6, qty: '1 oz' },
+   { cocktail_id: 8, ingredient_id: 10, qty: '2 dashes' },
+   { cocktail_id: 9, ingredient_id: 4, qty: '2 oz' },
+   { cocktail_id: 9, ingredient_id: 11, qty: '1 oz' },
+   { cocktail_id: 9, ingredient_id: 12, qty: '1 tsp' },
+   { cocktail_id: 10, ingredient_id: 1, qty: '1 oz' },
+   { cocktail_id: 10, ingredient_id: 6, qty: '1 oz' },
+   { cocktail_id: 10, ingredient_id: 7, qty: '1 oz' },
+   { cocktail_id: 11, ingredient_id: 5, qty: '1 oz' },
+   { cocktail_id: 11, ingredient_id: 4, qty: '1 oz' },
+   { cocktail_id: 11, ingredient_id: 11, qty: '1 oz' },
+   { cocktail_id: 11, ingredient_id: 12, qty: '1 tsp' },
+   { cocktail_id: 12, ingredient_id: 2, qty: '2 oz' }]
 )
 
 puts 'data seeded'
