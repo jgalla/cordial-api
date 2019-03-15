@@ -1,4 +1,4 @@
-class CocktailsController < ApplicationController
+class CocktailsController < OpenReadController
   before_action :set_cocktail, only: [:show, :update, :destroy]
 
   # GET /cocktails
