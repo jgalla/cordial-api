@@ -10,9 +10,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Ingredient.delete_all
-# Cocktail.delete_all
-# CocktailIngredient.delete_all
+Ingredient.delete_all
+Cocktail.delete_all
+CocktailIngredient.delete_all
 
 Ingredient.create(
   [{ ingredient_name: 'gin', checked_status: false },
@@ -30,12 +30,6 @@ Ingredient.create(
 )
 Cocktail.create(
   [{ name: 'Boulevardier', instructions: 'Stir with ice and strain into glass.' },
-   { name: 'Manhattan', instructions: 'Stir with ice and strain into glass.' },
-   { name: 'Margarita', instructions: 'Add ingredients to shaker. Shake then strain into glass.' },
-   { name: 'Negroni', instructions: 'Stir with ice and strain into glass.' },
-   { name: 'Mezcal Margarita', instructions: 'Add ingredients to shaker. Shake then strain into glass.' },
-   { name: 'Glass of whiskey', instructions: 'Pour into glass.' },
-   { name: 'Boulevardier', instructions: 'Stir with ice and strain into glass.' },
    { name: 'Manhattan', instructions: 'Stir with ice and strain into glass.' },
    { name: 'Margarita', instructions: 'Add ingredients to shaker. Shake then strain into glass.' },
    { name: 'Negroni', instructions: 'Stir with ice and strain into glass.' },
