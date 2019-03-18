@@ -46,6 +46,6 @@ class IngredientsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def ingredient_params
-      params.require(:ingredient).permit(:ingredient_name, :brand)
+      params.require(:ingredient).permit(:ingredient_name, :checked_status)
     end
 end
