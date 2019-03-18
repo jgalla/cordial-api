@@ -1,4 +1,4 @@
-class IngredientsController < OpenReadController
+class IngredientsController < ProtectedController
   before_action :set_ingredient, only: [:show, :update, :destroy]
 
   # GET /ingredients
@@ -15,7 +15,7 @@ class IngredientsController < OpenReadController
 
   # POST /ingredients
   def create
-    @ingredient = Ingredient.new(ingredient_params)
+    @ingredient = current_user.ingredients.build(ingredient_params)
 
     if @ingredient.save
       render json: @ingredient, status: :created, location: @ingredient
@@ -41,11 +41,11 @@ class IngredientsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ingredient
-      @ingredient = Ingredient.find(params[:id])
+      @ingredient = current_user.ingredients.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def ingredient_params
-      params.require(:ingredient).permit(:ingredient_name, :checked_status)
+      params.require(:ingredient).permit(:ingredient_name, :checked_status, :user_id)
     end
 end
