@@ -14,20 +14,28 @@
 # Cocktail.delete_all
 # CocktailIngredient.delete_all
 
-Ingredient.create(
-  [{ ingredient_name: 'gin', checked_status: false },
-   { ingredient_name: 'whiskey', checked_status: false },
-   { ingredient_name: 'vodka', checked_status: false },
-   { ingredient_name: 'tequila', checked_status: false },
-   { ingredient_name: 'mezcal', checked_status: false },
-   { ingredient_name: 'sweet vermouth', checked_status: false },
-   { ingredient_name: 'campari', checked_status: false },
-   { ingredient_name: 'bourbon', checked_status: false },
-   { ingredient_name: 'rye', checked_status: false },
-   { ingredient_name: 'bitters', checked_status: false },
-   { ingredient_name: 'lime juice', checked_status: false },
-   { ingredient_name: 'agave', checked_status: false }]
-)
+ingredient_list =
+  %w[gin whiskey vodka tequila mezcal sweet\ vermouth campari bourbon rye
+     bitters lime\ juice]
+
+ingredient_list.each do |ingredient|
+  Ingredient.create(ingredient_name: ingredient, checked_status: false)
+end
+
+# Ingredient.create(
+#   [{ ingredient_name: 'gin', checked_status: false },
+#    { ingredient_name: 'whiskey', checked_status: false },
+#    { ingredient_name: 'vodka', checked_status: false },
+#    { ingredient_name: 'tequila', checked_status: false },
+#    { ingredient_name: 'mezcal', checked_status: false },
+#    { ingredient_name: 'sweet vermouth', checked_status: false },
+#    { ingredient_name: 'campari', checked_status: false },
+#    { ingredient_name: 'bourbon', checked_status: false },
+#    { ingredient_name: 'rye', checked_status: false },
+#    { ingredient_name: 'bitters', checked_status: false },
+#    { ingredient_name: 'lime juice', checked_status: false },
+#    { ingredient_name: 'agave', checked_status: false }]
+# )
 Cocktail.create(
   [{ name: 'Boulevardier', instructions: 'Stir with ice and strain into glass.' },
    { name: 'Manhattan', instructions: 'Stir with ice and strain into glass.' },
