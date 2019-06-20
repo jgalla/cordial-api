@@ -36,6 +36,10 @@ end
 #    { ingredient_name: 'lime juice', checked_status: false },
 #    { ingredient_name: 'agave', checked_status: false }]
 # )
+
+cocktail_list =
+  []
+
 Cocktail.create(
   [{ name: 'Boulevardier', instructions: 'Stir with ice and strain into glass.' },
    { name: 'Manhattan', instructions: 'Stir with ice and strain into glass.' },
@@ -89,3 +93,4 @@ CocktailIngredient.create(
 
 puts 'data seeded'
 # puts Ingredient.where(ingredient_name: 'gin')
+# Ingredient.where(ingredient_name: 'gin').select(:id).first.id
